@@ -115,7 +115,9 @@ describe('BinaryTreeNode.visitPreorder', function() {
   for (let i of values) {
     tree.insert(i)
   }
-  tree.visitPreorder<BinarySearchTree>(node => expect(node.key).toBe(order.shift()))
+  tree.visitPreorder<BinarySearchTree>(node =>
+    expect(node.key).toBe(order.shift())
+  )
 })
 
 // check that returning `node.STOP` cancels visits.
@@ -168,7 +170,9 @@ describe('BinaryTreeNode.visitInorder', function() {
   for (let i of values) {
     tree.insert(i)
   }
-  tree.visitInorder<BinarySearchTree>(node => expect(node.key).toBe(order.shift()))
+  tree.visitInorder<BinarySearchTree>(node =>
+    expect(node.key).toBe(order.shift())
+  )
 })
 
 // **should support postorder visiting**
@@ -182,7 +186,9 @@ describe('BinaryTreeNode.visitPostorder', function() {
   for (let i of values) {
     tree.insert(i)
   }
-  tree.visitPostorder<BinarySearchTree>(node => expect(node.key).toBe(order.shift()))
+  tree.visitPostorder<BinarySearchTree>(node =>
+    expect(node.key).toBe(order.shift())
+  )
 })
 
 // **should have a convenience for root location**
