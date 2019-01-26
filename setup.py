@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 # Should match git tag
 VERSION = '1.0.0'
@@ -25,9 +25,8 @@ setup(
     url="https://github.com/justindujardin/mathtastic",
     author="Justin DuJardin",
     author_email="justin@dujardinconsulting.com",
-    packages=["src"],
+    packages=find_packages(),
     install_requires=REQUIRED_MODULES,
     extras_require={"dev": DEVELOPMENT_MODULES},
-    entry_points={"console_scripts": ["command=src.command_line:main"]},
     include_package_data=True,
 )
