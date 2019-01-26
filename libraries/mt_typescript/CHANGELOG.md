@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/justindujardin/mathtastic/compare/v1.3.0...v1.3.1) (2019-01-26)
+
+
+### Bug Fixes
+
+* pypi deployment ([a3751b3](https://github.com/justindujardin/mathtastic/commit/a3751b3))
+
 # [1.3.0](https://github.com/justindujardin/mathtastic/compare/v1.2.0...v1.3.0) (2019-01-26)
 
 
