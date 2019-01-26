@@ -2,7 +2,10 @@
 set -e
 
 # Make the virtualenv only if the folder doesn't exist
-[[ -d .env ]] || virtualenv .env -p python3.6
+DIR=.env
+if [ ! -d "${DIR}" ]; then
+  virtualenv .env -p python3.6
+fi
 
 source .env/bin/activate
 echo "Installing/updating requirements..."

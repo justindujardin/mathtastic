@@ -1,24 +1,29 @@
-language: generic
+matrix:
+  include:
+    - language: python
+      python: 3.6
+      before_script:
+        - cd libraries/mt_python
+        - sh ci/setup.sh
+      script:
+        - sh ci/test.sh
+
+    - language: node_js
+      node_js: '11'
+      before_script:
+        - cd libraries/mt_typescript
+        - sh ci/setup.sh
+      script:
+        - sh ci/test.sh
 cache:
   directories:
     - ~/.npm
 notifications:
   email: false
-python:
-  - "3.6"
-node_js:
-  - '11'
-install:
-  - sh setup.sh
-# command to run tests
-script:
-script:
-  - sh build.sh
-  - sh test.sh
-after_success:
-  - npm run travis-deploy-once "npm run report-coverage"
-  - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run travis-deploy-once "npm run deploy-docs"; fi
-  - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run travis-deploy-once "npm run semantic-release"; fi
+# after_success:
+#   - npm run travis-deploy-once "npm run report-coverage"
+#   - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run travis-deploy-once "npm run deploy-docs"; fi
+#   - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run travis-deploy-once "npm run semantic-release"; fi
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
