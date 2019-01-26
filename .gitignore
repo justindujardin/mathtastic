@@ -1,4 +1,10 @@
-venv
+.env
 *.orig
 
 __pycache__
+*.egg-info
+
+node_modules
+dist
+
+coverage
