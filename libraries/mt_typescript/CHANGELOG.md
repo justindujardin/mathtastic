@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/justindujardin/mathtastic/compare/v1.2.0...v1.3.0) (2019-01-26)
+
+
+### Features
+
+* add CHANGELOG ([f2b0ac5](https://github.com/justindujardin/mathtastic/commit/f2b0ac5))
+
 # [1.2.0](https://github.com/justindujardin/mathtastic/compare/v1.1.0...v1.2.0) (2019-01-26)
 
 
