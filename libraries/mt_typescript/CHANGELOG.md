@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/justindujardin/mathtastic/compare/v1.3.1...v1.4.0) (2019-01-26)
+
+
+### Features
+
+* **Typescript:** export tree node in package ([553f262](https://github.com/justindujardin/mathtastic/commit/553f262))
+
 ## [1.3.1](https://github.com/justindujardin/mathtastic/compare/v1.3.0...v1.3.1) (2019-01-26)
 
 
