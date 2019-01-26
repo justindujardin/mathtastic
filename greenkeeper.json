@@ -1,0 +1,9 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "libraries/mt_typescript/package.json"
+      ]
+    }
+  }
+}
