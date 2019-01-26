@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 # Should match git tag
-VERSION = '1.1.0'
+VERSION = '1.3.0'
 
 
 def readme():
