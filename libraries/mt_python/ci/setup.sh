@@ -7,7 +7,7 @@ if [ ! -d "${DIR}" ]; then
   virtualenv .env -p python3.6
 fi
 
-source .env/bin/activate
+. .env/bin/activate
 echo "Installing/updating requirements..."
 pip install -e .[dev]
 
