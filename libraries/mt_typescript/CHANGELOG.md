@@ -1,3 +1,16 @@
+# [1.6.0](https://github.com/justindujardin/mathtastic/compare/v1.5.1...v1.6.0) (2019-01-27)
+
+
+### Bug Fixes
+
+* remove gh-pages deploy script ([d9e80d0](https://github.com/justindujardin/mathtastic/commit/d9e80d0))
+
+
+### Features
+
+* bump python version with node package ([f6dfb83](https://github.com/justindujardin/mathtastic/commit/f6dfb83))
+* move semantic-release to bottom of monorepo ([764e4d4](https://github.com/justindujardin/mathtastic/commit/764e4d4))
+
 ## [1.5.1](https://github.com/justindujardin/mathtastic/compare/v1.5.0...v1.5.1) (2019-01-27)
 
 
