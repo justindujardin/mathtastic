@@ -17,8 +17,6 @@ echo "                 Commits: ${COMMIT_COUNT}"
 
 echo "Build and publish to pypi..."
 rm -rf build dist
-virtualenv -p python3.6 .env
-. .env/bin/activate
 echo "--- Install requirements"
 pip install twine wheel
 pip install -r requirements.txt
