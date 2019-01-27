@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/justindujardin/mathtastic/compare/v1.6.0...v1.7.0) (2019-01-27)
+
+
+### Features
+
+* move semantic-release to project root ([ef02528](https://github.com/justindujardin/mathtastic/commit/ef02528))
+
 # [1.6.0](https://github.com/justindujardin/mathtastic/compare/v1.5.1...v1.6.0) (2019-01-27)
 
 
