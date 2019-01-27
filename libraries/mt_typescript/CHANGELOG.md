@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/justindujardin/mathtastic/compare/v1.4.0...v1.5.0) (2019-01-27)
+
+
+### Bug Fixes
+
+* test new python deploy integration ([b1c3958](https://github.com/justindujardin/mathtastic/commit/b1c3958))
+
+
+### Features
+
+* **build:** add build script at root for all modules ([669eb83](https://github.com/justindujardin/mathtastic/commit/669eb83))
+
 # [1.4.0](https://github.com/justindujardin/mathtastic/compare/v1.3.1...v1.4.0) (2019-01-26)
 
 
