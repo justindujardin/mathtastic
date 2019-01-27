@@ -3,7 +3,7 @@ matrix:
     - language: python
       python: 3.6
       before_script:
-        - npm install && sh tools/set-build-version.sh
+        - npm install && npx ts-node tools/set-build-version.ts
         - cd libraries/mt_python
         - sh tools/setup.sh
       script:
