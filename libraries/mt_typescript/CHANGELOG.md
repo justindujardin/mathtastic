@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/justindujardin/mathtastic/compare/v1.5.0...v1.5.1) (2019-01-27)
+
+
+### Bug Fixes
+
+* remove second virtualenv ([44a46cc](https://github.com/justindujardin/mathtastic/commit/44a46cc))
+
 # [1.5.0](https://github.com/justindujardin/mathtastic/compare/v1.4.0...v1.5.0) (2019-01-27)
 
 
