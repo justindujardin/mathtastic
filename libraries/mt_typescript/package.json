@@ -87,6 +87,12 @@
     "verifyConditions": [
       "@semantic-release/changelog",
       "@semantic-release/npm",
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "cd ../mt_python/ && sh ci/deploy.sh ${nextRelease.version} ${options.branch} ${commits.length}"
+        }
+      ],
       "@semantic-release/github",
       "@semantic-release/git"
     ],
@@ -100,6 +106,7 @@
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
     "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/exec": "^3.3.2",
     "@semantic-release/git": "^7.0.7",
     "@semantic-release/github": "^5.2.9",
     "@semantic-release/npm": "^5.1.3",
