@@ -3,21 +3,22 @@ matrix:
     - language: python
       python: 3.6
       before_script:
+        - npm install && sh tools/set-build-version.sh
         - cd libraries/mt_python
-        - sh ci/setup.sh
+        - sh tools/setup.sh
       script:
-        - sh ci/test.sh
+        - sh tools/test.sh
       after_success:
         - echo "todo: python coverage reporting to coveralls"
-        - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then sh ci/deploy.sh; fi
+        - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then sh tools/deploy.sh; fi
 
     - language: node_js
       node_js: '11'
       before_script:
         - cd libraries/mt_typescript
-        - sh ci/setup.sh
+        - sh tools/setup.sh
       script:
-        - sh ci/test.sh
+        - sh tools/test.sh
       after_success:
         - npm run travis-deploy-once "npm run report-coverage"
         - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run travis-deploy-once "npm run deploy-docs"; fi

@@ -28,11 +28,11 @@
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",
-    "deploy-docs": "ts-node ci/gh-pages-publish",
+    "deploy-docs": "ts-node tools/gh-pages-publish",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "commit": "git-cz",
     "semantic-release": "semantic-release",
-    "semantic-release-prepare": "ts-node ci/semantic-release-prepare",
+    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
     "precommit": "lint-staged",
     "travis-deploy-once": "travis-deploy-once"
   },
@@ -90,7 +90,7 @@
       [
         "@semantic-release/exec",
         {
-          "publishCmd": "cd ../mt_python/ && sh ci/deploy.sh ${nextRelease.version} ${options.branch} ${commits.length}"
+          "publishCmd": "cd ../mt_python/ && sh tools/deploy.sh ${nextRelease.version} ${options.branch} ${commits.length}"
         }
       ],
       "@semantic-release/github",

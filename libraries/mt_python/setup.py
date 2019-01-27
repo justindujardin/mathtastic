@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
-# Should match git tag
-VERSION = '1.3.0'
+# DO_NOT_MODIFY_THIS_VALUE_IS_SET_BY_THE_BUILD_MACHINE
+VERSION = "1.3.0"
 
 
 def readme():
