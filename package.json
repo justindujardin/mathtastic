@@ -20,7 +20,12 @@
   "release": {
     "verifyConditions": [
       "@semantic-release/changelog",
-      "@semantic-release/npm",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "libraries/mt_typescript/"
+        }
+      ],
       [
         "@semantic-release/git",
         {
