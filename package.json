@@ -22,12 +22,6 @@
       "@semantic-release/changelog",
       "@semantic-release/npm",
       [
-        "@semantic-release/exec",
-        {
-          "publishCmd": "cd libraries/mt_python/ && sh tools/deploy.sh ${nextRelease.version} ${options.branch} ${commits.length}"
-        }
-      ],
-      [
         "@semantic-release/git",
         {
           "assets": [
