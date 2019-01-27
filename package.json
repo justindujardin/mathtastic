@@ -11,54 +11,10 @@
     "url": "https://github.com/justindujardin/mathtastic"
   },
   "license": "MIT",
-  "scripts": {
-    "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once",
-    "prepush": "npm run test:prod && npm run build",
-    "commitmsg": "commitlint -E GIT_PARAMS"
-  },
-  "release": {
-    "verifyConditions": [
-      "@semantic-release/changelog",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "libraries/mt_typescript/"
-        }
-      ],
-      [
-        "@semantic-release/git",
-        {
-          "assets": [
-            "CHANGELOG.md",
-            "package-lock.json",
-            "package.json",
-            "libraries/mt_python/package-lock.json",
-            "libraries/mt_python/package.json",
-            "libraries/mt_python/setup.py"
-          ],
-          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-        }
-      ],
-      "@semantic-release/github",
-      "@semantic-release/git"
-    ],
-    "prepare": [
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git"
-    ]
-  },
   "devDependencies": {
-    "@semantic-release/changelog": "^3.0.2",
-    "@semantic-release/exec": "^3.3.2",
-    "@semantic-release/git": "^7.0.7",
-    "@semantic-release/github": "^5.2.9",
-    "@semantic-release/npm": "^5.1.3",
     "@types/node": "^10.12.18",
     "semantic-release": "^15.13.3",
     "stream-buffers": "^3.0.2",
-    "travis-deploy-once": "^5.0.9",
     "ts-node": "^8.0.2",
     "typescript": "^3.0.3"
   },
