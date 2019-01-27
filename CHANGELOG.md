@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/justindujardin/mathtastic/compare/v1.7.0...v1.7.1) (2019-01-27)
+
+
+### Bug Fixes
+
+* set npm package root to mt_typescript ([e55ec65](https://github.com/justindujardin/mathtastic/commit/e55ec65))
+
 # [1.7.0](https://github.com/justindujardin/mathtastic/compare/v1.6.0...v1.7.0) (2019-01-27)
 
 
