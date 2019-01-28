@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/justindujardin/mathtastic/compare/v1.7.3...v2.0.0) (2019-01-28)
+
+
+### Bug Fixes
+
+* use consistent naming for tree files between languages ([88b2f4b](https://github.com/justindujardin/mathtastic/commit/88b2f4b))
+
+
+### BREAKING CHANGES
+
+* typescript import of BinaryTreeNode comes from 'tree' rather than 'treeNode' module
+
 ## [1.7.3](https://github.com/justindujardin/mathtastic/compare/v1.7.2...v1.7.3) (2019-01-28)
 
 
