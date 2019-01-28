@@ -7,7 +7,11 @@ export const LEFT = 'left'
 // The constant representing the right child side of a node.
 export const RIGHT = 'right'
 
-export type NodeVisitFunction<T extends BinaryTreeNode = BinaryTreeNode> = (node: T, depth: number, data?: any) => any
+export type NodeVisitFunction<T extends BinaryTreeNode = BinaryTreeNode> = (
+  node: T,
+  depth: number,
+  data?: any
+) => any
 
 /**
  * The binary tree node is the base node for all of our trees, and provides a
@@ -70,7 +74,7 @@ export class BinaryTreeNode {
    * Rotate a node, changing the structure of the tree, without modifying
    * the order of the nodes in the tree.
    */
-  public rotate() {
+  public rotate(): undefined {
     const node = this
     const { parent } = this
     if (!node || !parent) {
@@ -91,10 +95,10 @@ export class BinaryTreeNode {
       return
     }
     if (parent === grandParent.left) {
-      return (grandParent.left = node)
+      grandParent.left = node
+      return
     }
-
-    return (grandParent.right = node)
+    grandParent.right = node
   }
 
   // **Tree Traversal**
@@ -114,10 +118,16 @@ export class BinaryTreeNode {
     if (visitFunction && visitFunction(this as any, depth, data) === STOP) {
       return STOP
     }
-    if (this.left && this.left.visitPreorder(visitFunction, depth + 1, data) === STOP) {
+    if (
+      this.left &&
+      this.left.visitPreorder(visitFunction, depth + 1, data) === STOP
+    ) {
       return STOP
     }
-    if (this.right && this.right.visitPreorder(visitFunction, depth + 1, data) === STOP) {
+    if (
+      this.right &&
+      this.right.visitPreorder(visitFunction, depth + 1, data) === STOP
+    ) {
       return STOP
     }
   }
@@ -127,13 +137,19 @@ export class BinaryTreeNode {
     depth = 0,
     data?: any
   ): 'stop' | undefined {
-    if (this.left && this.left.visitInorder(visitFunction, depth + 1, data) === STOP) {
+    if (
+      this.left &&
+      this.left.visitInorder(visitFunction, depth + 1, data) === STOP
+    ) {
       return STOP
     }
     if (visitFunction && visitFunction(this as any, depth, data) === STOP) {
       return STOP
     }
-    if (this.right && this.right.visitInorder(visitFunction, depth + 1, data) === STOP) {
+    if (
+      this.right &&
+      this.right.visitInorder(visitFunction, depth + 1, data) === STOP
+    ) {
       return STOP
     }
   }
@@ -143,11 +159,16 @@ export class BinaryTreeNode {
     depth = 0,
     data?: any
   ): 'stop' | undefined {
-
-    if (this.left && this.left.visitPostorder(visitFunction, depth + 1, data) === STOP) {
+    if (
+      this.left &&
+      this.left.visitPostorder(visitFunction, depth + 1, data) === STOP
+    ) {
       return STOP
     }
-    if (this.right && this.right.visitPostorder(visitFunction, depth + 1, data) === STOP) {
+    if (
+      this.right &&
+      this.right.visitPostorder(visitFunction, depth + 1, data) === STOP
+    ) {
       return STOP
     }
     if (visitFunction && visitFunction(this as any, depth, data) === STOP) {
@@ -199,7 +220,10 @@ export class BinaryTreeNode {
   }
 
   // Set a new `child` on the given `side`
-  public setSide<T extends BinaryTreeNode>(child: T | null, side: 'left' | 'right') {
+  public setSide<T extends BinaryTreeNode>(
+    child: T | null,
+    side: 'left' | 'right'
+  ) {
     if (side === LEFT) {
       return this.setLeft(child)
     }
@@ -239,9 +263,8 @@ export class BinaryTreeNode {
 }
 
 /**
- * A very simple binary search tree that relies on keys that support
+ * A  binary search tree that relies on keys that support
  * operator value comparison.
- * @class
  */
 export class BinarySearchTree extends BinaryTreeNode {
   constructor(public key: string | number) {

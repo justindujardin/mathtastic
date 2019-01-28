@@ -1,1 +1,1 @@
-export * from './treeNode'
+export * from './tree'

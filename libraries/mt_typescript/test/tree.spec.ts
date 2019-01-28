@@ -1,4 +1,4 @@
-import { BinaryTreeNode, BinarySearchTree, STOP } from '../src/treeNode'
+import { BinaryTreeNode, BinarySearchTree, STOP } from '../src/tree'
 
 // This is the test-suite for [binary-trunk](./index.html).
 
@@ -31,7 +31,7 @@ describe('BinaryTreeNode.constructor', () => {
 // check to be sure that when we clone off a known node of the tree
 // that its children, and only its children, are still searchable
 // from the cloned tree.
-test('BinaryTreeNode.clone', function() {
+describe('BinaryTreeNode.clone', function() {
   const tree = new BinarySearchTree(0)
   for (let i = 0; i <= 25; i++) {
     tree.insert(i)
@@ -54,7 +54,7 @@ test('BinaryTreeNode.clone', function() {
 
 // check that the known extremes of a tree are reported as leaf nodes
 // and that all other known non-extremes are not.
-test('BinaryTreeNode.isLeaf', function() {
+describe('BinaryTreeNode.isLeaf', function() {
   const tree = new BinarySearchTree(0)
   for (let i = -1, asc = -1 <= 5; asc ? i <= 5 : i >= 5; asc ? i++ : i--) {
     tree.insert(i)
@@ -84,7 +84,7 @@ test('BinaryTreeNode.isLeaf', function() {
 // test to ensure that rotations do not compromise the search tree
 // by randomly rotating nodes, and verifying that all known numbers
 // can still be found.
-test('BinaryTreeNode.rotate', function() {
+describe('BinaryTreeNode.rotate', function() {
   const values = __range__(-5, 5, true)
   const tree = new BinarySearchTree(0)
   for (var i of values) {
