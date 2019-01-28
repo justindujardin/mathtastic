@@ -18,6 +18,7 @@ matrix:
         - cd libraries/mt_typescript
         - sh tools/setup.sh
       script:
+        - sh tools/build.sh
         - sh tools/test.sh
       after_success:
         - npm run travis-deploy-once "npm run report-coverage"
