@@ -8,18 +8,6 @@
   ],
   "imageSize": 100,
   "commit": true,
-  "contributors": [
-    {
-      "login": "justindujardin",
-      "name": "Justin DuJardin",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/101493?v=4",
-      "profile": "https://www.justindujardin.com/",
-      "contributions": [
-        "test",
-        "code",
-        "infra"
-      ]
-    }
-  ],
+  "contributors": [],
   "contributorsPerLine": 7
 }
