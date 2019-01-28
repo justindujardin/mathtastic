@@ -1,12 +1,12 @@
 import { BinaryTreeNode, BinarySearchTree, STOP } from '../src/tree'
 
-// This is the test-suite for [binary-trunk](./index.html).
+// This is the it-suite for [binary-trunk](./index.html).
 
 // **should accept children in the constructor**
 
 // check that the children passed in the constructor are properly assigned,
 // and that their `parent` variables are also set to the root node properly.
-describe('BinaryTreeNode.constructor', () => {
+it('BinaryTreeNode.constructor', () => {
   const tree = new BinaryTreeNode(new BinaryTreeNode(), new BinaryTreeNode())
   //"children assigned properly by constructor"
   expect(tree.left !== null && tree.right !== null).toBeTruthy()
@@ -31,7 +31,7 @@ describe('BinaryTreeNode.constructor', () => {
 // check to be sure that when we clone off a known node of the tree
 // that its children, and only its children, are still searchable
 // from the cloned tree.
-describe('BinaryTreeNode.clone', function() {
+it('BinaryTreeNode.clone', function() {
   const tree = new BinarySearchTree(0)
   for (let i = 0; i <= 25; i++) {
     tree.insert(i)
@@ -54,26 +54,26 @@ describe('BinaryTreeNode.clone', function() {
 
 // check that the known extremes of a tree are reported as leaf nodes
 // and that all other known non-extremes are not.
-describe('BinaryTreeNode.isLeaf', function() {
+it('BinaryTreeNode.isLeaf', function() {
   const tree = new BinarySearchTree(0)
   for (let i = -1, asc = -1 <= 5; asc ? i <= 5 : i >= 5; asc ? i++ : i--) {
     tree.insert(i)
   }
   const negNode = tree.find(-1)
   if (!negNode) {
-    throw new Error('invalid test state')
+    throw new Error('invalid it state')
   }
   expect(negNode.isLeaf()).toBe(true)
   const fiveNode = tree.find(5)
   if (!fiveNode) {
-    throw new Error('invalid test state')
+    throw new Error('invalid it state')
   }
   expect(fiveNode.isLeaf()).toBe(true)
   const values = [0, 1, 2, 3, 4]
   values.forEach(n => {
     const node = tree.find(n)
     if (!node) {
-      throw new Error('invalid test state')
+      throw new Error('invalid it state')
     }
     expect(node.isLeaf()).toBe(false)
   })
@@ -81,10 +81,10 @@ describe('BinaryTreeNode.isLeaf', function() {
 
 // **should support node rotations**
 
-// test to ensure that rotations do not compromise the search tree
+// it to ensure that rotations do not compromise the search tree
 // by randomly rotating nodes, and verifying that all known numbers
 // can still be found.
-describe('BinaryTreeNode.rotate', function() {
+it('BinaryTreeNode.rotate', function() {
   const values = __range__(-5, 5, true)
   const tree = new BinarySearchTree(0)
   for (var i of values) {
@@ -108,7 +108,7 @@ describe('BinaryTreeNode.rotate', function() {
 
 // check the order in which the nodes are visited against what is
 // expected for a preorder tree visit.
-describe('BinaryTreeNode.visitPreorder', function() {
+it('BinaryTreeNode.visitPreorder', function() {
   const values = [-1, 0, 1]
   const order = [0, -1, 1]
   const tree = new BinarySearchTree(0)
@@ -121,7 +121,7 @@ describe('BinaryTreeNode.visitPreorder', function() {
 })
 
 // check that returning `node.STOP` cancels visits.
-describe('BinaryTreeNode.visit[Pre/In/Post]order (Stop)', function() {
+it('BinaryTreeNode.visit[Pre/In/Post]order (Stop)', function() {
   const values = [-1, 0, 1]
   const tree = new BinarySearchTree(0)
   for (let i of values) {
@@ -163,7 +163,7 @@ describe('BinaryTreeNode.visit[Pre/In/Post]order (Stop)', function() {
 
 // check the order in which the nodes are visited against what is
 // expected for a inorder tree visit.
-describe('BinaryTreeNode.visitInorder', function() {
+it('BinaryTreeNode.visitInorder', function() {
   const values = [-1, 0, 1]
   const order = [-1, 0, 1]
   const tree = new BinarySearchTree(0)
@@ -179,7 +179,7 @@ describe('BinaryTreeNode.visitInorder', function() {
 
 // check the order in which the nodes are visited against what is
 // expected for a postorder tree visit.
-describe('BinaryTreeNode.visitPostorder', function() {
+it('BinaryTreeNode.visitPostorder', function() {
   const values = [-1, 0, 1]
   const order = [-1, 1, 0]
   const tree = new BinarySearchTree(0)
@@ -195,7 +195,7 @@ describe('BinaryTreeNode.visitPostorder', function() {
 
 // verify that `getRoot` is working as expected by checking that
 // every node in the tree returns the same value when it is invoked.
-describe('BinaryTreeNode.getRoot', function() {
+it('BinaryTreeNode.getRoot', function() {
   const values = __range__(-5, 5, true)
   const tree = new BinarySearchTree(0)
   for (let i of values) {
@@ -204,7 +204,7 @@ describe('BinaryTreeNode.getRoot', function() {
   values.forEach(n => {
     const node = tree.find(n)
     if (!node) {
-      throw new Error('invalid test state')
+      throw new Error('invalid it state')
     }
     expect(node.getRoot()).toBe(tree)
   })
@@ -213,7 +213,7 @@ describe('BinaryTreeNode.getRoot', function() {
 // **should have a left child setter**
 
 // verify that the left child setter properly assigns parent link.
-describe('BinaryTreeNode.setLeft', function() {
+it('BinaryTreeNode.setLeft', function() {
   const one = new BinaryTreeNode()
   const two = new BinaryTreeNode()
   one.setLeft(two)
@@ -225,7 +225,7 @@ describe('BinaryTreeNode.setLeft', function() {
 // **should have a right child setter**
 
 // verify that the right child setter properly assigns parent link.
-describe('BinaryTreeNode.setRight', function() {
+it('BinaryTreeNode.setRight', function() {
   const one = new BinaryTreeNode()
   const two = new BinaryTreeNode()
   one.setRight(two)
@@ -243,7 +243,7 @@ describe('BinaryTreeNode.setRight', function() {
 //
 // In the event that a node is passed that is not a child, an exception
 // will be thrown.
-describe('BinaryTreeNode.getSide', function() {
+it('BinaryTreeNode.getSide', function() {
   const values = [-1, -2, -3, -4, 1, 2, 3, 4]
   const tree = new BinarySearchTree(0)
   for (let i of values) {
@@ -251,13 +251,13 @@ describe('BinaryTreeNode.getSide', function() {
   }
   let node = tree.find(-4)
   if (!node || !node.parent) {
-    throw new Error('invalid test state')
+    throw new Error('invalid it state')
   }
   // found child on expected side of parent
   expect(node.parent.getSide(node) === 'left').toBeTruthy()
   node = tree.find(4)
   if (!node || !node.parent) {
-    throw new Error('invalid test state')
+    throw new Error('invalid it state')
   }
   // found child on expected side of parent
   expect(node.parent.getSide(node) === 'right').toBeTruthy()
@@ -273,7 +273,7 @@ describe('BinaryTreeNode.getSide', function() {
 // the proper left or right node on the new parent.
 //
 // check that an exception is thrown when a bad side string is passed.
-describe('BinaryTreeNode.setSide', function() {
+it('BinaryTreeNode.setSide', function() {
   const tree = new BinaryTreeNode()
   const one = new BinaryTreeNode()
   const two = new BinaryTreeNode()
@@ -288,7 +288,7 @@ describe('BinaryTreeNode.setSide', function() {
 // **should be able to return children as a list**
 
 // check a few permutations of expected results from getChildren.
-describe('BinaryTreeNode.getChildren', function() {
+it('BinaryTreeNode.getChildren', function() {
   const values = [-2, -1, -3, 0, 1, 2]
   const tree = new BinarySearchTree(0)
   for (let i of values) {
@@ -296,7 +296,7 @@ describe('BinaryTreeNode.getChildren', function() {
   }
   const negNode = tree.find(-2)
   if (!negNode) {
-    throw new Error('invalid test state')
+    throw new Error('invalid it state')
   }
   const neg = negNode.getChildren<BinarySearchTree>()
   expect(neg.length).toBe(2) // , 'expect two children of -1')
@@ -304,14 +304,14 @@ describe('BinaryTreeNode.getChildren', function() {
   expect(neg[1].key).toBe(-1) // , 'expect right child of -1 to second')
   const oneNode = tree.find(1)
   if (!oneNode) {
-    throw new Error('invalid test state')
+    throw new Error('invalid it state')
   }
   const one = oneNode.getChildren<BinarySearchTree>()
   expect(one.length).toBe(1) // , 'expect one child of 1')
   expect(one[0].key).toBe(2) // , 'expect child of 1 to be 2')
   const twoNode = tree.find(2)
   if (!twoNode) {
-    throw new Error('invalid test state')
+    throw new Error('invalid it state')
   }
   const two = twoNode.getChildren<BinarySearchTree>()
   expect(two.length).toBe(0) // , 'expect no children for 2')
@@ -321,7 +321,7 @@ describe('BinaryTreeNode.getChildren', function() {
 
 // check that siblings are reported properly for a known tree
 // structure.
-describe('BinaryTreeNode.getSibling', function() {
+it('BinaryTreeNode.getSibling', function() {
   const tree = new BinaryTreeNode(new BinaryTreeNode(), new BinaryTreeNode())
   // @ts-ignore
   expect(tree.left.getSibling()).toBe(tree.right) // , true, 'left sibling is right')
@@ -333,7 +333,7 @@ describe('BinaryTreeNode.getSibling', function() {
 // **should support serializing to JSON**
 
 // check to be sure recursive node JSON format matches expectations
-describe('BinaryTreeNode.toJSON', function() {
+it('BinaryTreeNode.toJSON', function() {
   const tree = new BinaryTreeNode(new BinaryTreeNode(), new BinaryTreeNode())
   const json = tree.toJSON()
   expect(json.children.length).toBe(2)
